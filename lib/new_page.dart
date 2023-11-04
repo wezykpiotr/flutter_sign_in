@@ -2,30 +2,32 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class NewPage extends StatefulWidget {
-  const NewPage({super.key});
+class NewPage extends StatelessWidget {
+  NewPage({super.key});
 
-  @override
-  State<NewPage> createState() => _NewPageState();
-}
+//   @override
+//   State<NewPage> createState() => _NewPageState();
+// }
 
-class _NewPageState extends State<NewPage> {
+// class _NewPageState extends State<NewPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+//   User? _user;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _auth.authStateChanges().listen((event) {
+//       setState(() {
+//         _user = event;
+//       });
+//     });
+//   }
+
   User? _user;
-
-  @override
-  void initState() {
-    super.initState();
-    _auth.authStateChanges().listen((event) {
-      setState(() {
-        _user = event;
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text("Google SignIn"),
@@ -48,7 +50,7 @@ class _NewPageState extends State<NewPage> {
 
   Widget _userInfo() {
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      width: 500,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

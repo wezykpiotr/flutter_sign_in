@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutterfire_ui/auth.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -16,17 +16,17 @@ class LoginPage extends StatelessWidget {
           ),
         ],
       ),
-      // body: ProfileScreen(
-      //   providerConfigs: const [
-      //     EmailProviderConfiguration(),
-      //   ],
-      //   actions: [
-      //     SignedOutAction((context) {
-      //       Navigator.of(context).pop();
-      //     })
-      //   ],
-      //   avatarSize: 48,
-      // ),
+      body: ProfileScreen(
+        providerConfigs: const [
+          EmailProviderConfiguration(),
+        ],
+        actions: [
+          SignedOutAction((context) {
+            Navigator.of(context).pop();
+          })
+        ],
+        avatarSize: 48,
+      ),
     );
   }
 }
